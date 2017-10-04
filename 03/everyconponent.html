@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECharts中常用都组件属性</title>
+    <script src="../echarts.common.min.js"></script>
+</head>
+<body>
+    <div id="main" style="height: 900px; width: 1200px;"></div>
+    <script>
+        var myChart = echarts.init(document.getElementById("main"));
+        
+        var option = {
+            title: {
+                show: true,
+                text: '机械键盘',
+                textStyle: {
+                    fontSize : 27
+                },
+                subtext: '出售情况',
+                left: 120,
+                borderColor: 'red',
+                borderWidth: 3                
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    saveAsImage:{
+                        show : true
+                    },
+                    dataView: {
+                        show: true
+                    },
+                    dataZoom: {
+                        show: true
+                    },
+                    restore: {
+                        show: true
+                    },
+                    //动态类型切换：能在不同图表类型中进行切换
+                    magicType: {
+                        type: ['line','bar']
+                    }
+                }
+            },
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ['cherry','varmilo','filco','leopold','IKBC','ganss']
+            },
+            yAxis: {
+
+            },
+            //鼠标划过时会有一个数据显示框，重要
+            tooltip: {
+                trigger: 'axis'
+            },
+            series: [{
+                type: 'bar',
+                name: '销量',
+                data: [33,23,64,24,18,43],
+                markPoint: {
+                    data: [{type: 'max', name: '最大值'},{type: 'min',name: '最小值'}]
+                },
+                markLine: {
+                    data: [{type: 'average', name: '平均值'}]
+                }
+            }]
+        }
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
