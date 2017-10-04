@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECharts简单示例之折线图</title>
+    <script src="../echarts.common.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 900px; height: 600px;"></div>
+<script>
+    var myChart = echarts.init(document.getElementById("main"));
+    var option = {
+        title: {
+            text: 'ECharts入门示例之折线图'
+        },
+        toolbox: {
+            saveAsImage:{
+                show: true
+            }
+        },
+        legend: {
+            data:['销量']
+        },
+        xAxis:{
+            data: ['Leopold','tada68','minila','plum','realforce','varmilo']
+        },
+        yAxis:{},
+        series: [{
+            name: '销量',
+            type: 'line',
+            data: [5,23,56,32,15,2]
+        },
+        {
+            name: '产量',
+            type: 'bar',
+            data: [33,23,15,64,34,23]
+        }],
+        
+    };
+    myChart.setOption(option);
+</script>
+    
+</body>
+</html>

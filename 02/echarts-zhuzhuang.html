@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ECharts之直方图</title>
+    <script src= "../echarts.common.min.js"></script>
+</head>
+<body>
+<!-- 首先要给ECharts一个Dom做为她的舞台 -->
+<div id="main" style= "width: 900px; height: 600px;"></div>
+<!-- 画布有了，玩JS即可了 -->
+<script>
+    var myChart = echarts.init(document.getElementById("main"));
+
+//下面的option是图标的配置项和数据
+var option = {
+    title:{
+        text: 'ECharts入门示例之直方图'
+    },
+//工具箱
+    toolbox:{
+        show: true,
+        feature: {
+            saveAsImage: {
+                show: true
+            }
+        }
+    },
+//图例
+    legend:{
+        data: ['销量']
+    },
+//x轴
+    xAxis: {
+        data: ['Filco','Cherry','IKBC','Varmilo','JAGOR','GTUNE']
+    },
+//y轴
+    yAxis: {},
+
+//数据
+    series:[{
+        name: '销量',
+        type: 'bar',
+        data: [5,40,33,20,15,5]
+    }]
+};
+
+//下面这条语句很重要！！！
+//使用指定的配置项和数据绘制并显示图表
+myChart.setOption(option);
+</script>
+
+</body>
+</html>
