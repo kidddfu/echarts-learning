@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- canvas与svg画图的区别 -->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- canvas  -->
+    <canvas id="myCanvas" wodth = "400px" height="300px">
+        别闹了哥们，用的IE吧，你用的浏览器不支持canvas
+    </canvas>
+<script type="text/javascript">
+//获取画布对象
+    var canvas = document.getElementById("myCanvas");    
+    var ctx = canvas.getContext("2d");
+//开始一个新的绘制路径    
+    ctx.beginPath;
+//设置弧线颜色
+    ctx.strokeStyle = "blue";
+    var circle = {
+        x : 100,    //圆心x轴坐标
+        y : 100,    //圆心y轴坐标
+        r : 50      //半径
+    }
+//沿着坐标点（100，100）为圆心，半径50的圆形，顺时针方向绘制弧线
+ctx.arc(circle.x, circle.y ,circle.r, 0, Math.PI*2, false);
+//绘制
+ctx.stroke();
+</script>
+
+
+<!-- svg --> 
+
+<svg width="100%" height= "100%" version= "1.1" 
+xmlns= "www.w3.org/2000/svg" >
+
+<circle cx= "70" cy= "50" r= "40" 
+stroke= "red" stroke-width= "2" fill= "yellow" />
+
+<rect x= "120" width= "100" height ="100"
+style="fill:rgb(0,0,255);
+stroke-width: 1;
+stroke: rgb(0,0,0)"/>
+
+</svg>
+<script src="../echarts.common.min.js"></script>
+</body>
+</html>
