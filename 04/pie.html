@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>饼图</title>
+    <script src="../echarts.common.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 1200 ; height: 900px;"></div>
+    <script>
+        var myChart = echarts.init(document.getElementById("main"));
+        var option = {
+            title: {
+                
+                name: '机械键盘销量'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['varmilo','filco','leopold','ganss','ikbc','jagor']
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            series: [{
+                name: '销量',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%','60%'],
+                selectedMode: true,
+                data: [
+                    {name : 'varmilo', value: 33},
+                    {name : 'ganss', value: 33},
+                    {name : 'filco', value: 33},
+                    {name : 'jagor', value: 33},
+                    {name : 'leopold', value: 33},
+                    {name : 'ikbc', value: 33},                    
+                ]
+            }]
+        }
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
